@@ -1,12 +1,65 @@
 <html>
 <head>
-<script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.js"></script>
-<script src="lib/util.js"></script>
-<script src="lib/rotor.js"></script>
-<script src="lib/reflector.js"></script>
-<script src="lib/machine.js"></script>
-<script src="main.js"></script>
+  <!-- UI Imports -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Special+Elite">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Engima Simulator Imports -->
+  <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.js"></script>
+  <script src="lib/util.js"></script>
+  <script src="lib/rotor.js"></script>
+  <script src="lib/reflector.js"></script>
+  <script src="lib/machine.js"></script>
+  <script src="main.js"></script>
 </head>
 <body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4"><h1>M4 Naval Enigma</h1></div>
+      <div class="col-md-8"><h1><button class="btn btn-default randomise" type="submit">Randomise</button></h1></div>
+    </div>
+    <div class="row options-row">
+      <div class="col-md-2"><p class="options-row-label">Reflector / Rotors</p></div>
+      <div class="col-md-2"><select id="reflector" class="form-control"></select></div>
+      <div class="col-md-1"><select id="thin-rotor-no-1" class="form-control"></select></div>
+      <div class="col-md-1"><select id="rotor-no-1" class="form-control"></select></div>
+      <div class="col-md-1"><select id="rotor-no-2" class="form-control"></select></div>
+      <div class="col-md-1"><select id="rotor-no-3" class="form-control"></select></div>
+    </div>
+    <div class="row options-row">
+      <div class="col-md-4"><p class="options-row-label">Ground Setting</p></div>
+      <div class="col-md-1"><select id="ground-setting-thin-rotor-no-1" class="form-control"></select></div>
+      <div class="col-md-1"><select id="ground-setting-rotor-no-1" class="form-control"></select></div>
+      <div class="col-md-1"><select id="ground-setting-rotor-no-2" class="form-control"></select></div>
+      <div class="col-md-1"><select id="ground-setting-rotor-no-3" class="form-control"></select></div>
+    </div>
+    <div class="row options-row">
+      <div class="col-md-4"><p class="options-row-label">Ring Setting</p></div>
+      <div class="col-md-1"><select id="ring-setting-thin-rotor-no-1" class="form-control"></select></div>
+      <div class="col-md-1"><select id="ring-setting-rotor-no-1" class="form-control"></select></div>
+      <div class="col-md-1"><select id="ring-setting-rotor-no-2" class="form-control"></select></div>
+      <div class="col-md-1"><select id="ring-setting-rotor-no-3" class="form-control"></select></div>
+    </div>
+    <div class="row" style="margin-bottom: 20px;">
+      <div class="col-md-4"><textarea class="form-control message" placeholder="Enter a message and click &quot;Run&quot;"></textarea></div>
+      <div class="col-md-4"><button class="btn btn-default run" type="submit">Run</button></div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">Input</div>
+          <div class="panel-body ciphertext-input"></div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">Output</div>
+          <div class="panel-body ciphertext-output"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
