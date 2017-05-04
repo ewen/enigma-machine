@@ -1,3 +1,6 @@
+// Put the machine on the window scope as it's useful to access in the console.
+var enigmaMachine;
+
 $(function () {
   var letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
@@ -68,12 +71,26 @@ $(function () {
     });
   }
 
-  var enigmaMachine = enigma.machine.create('M4');
+  enigmaMachine = enigma.machine.create('M4');
   setup(enigmaMachine.getType());
   update(enigmaMachine.getState());
 
   $('#reflector').change(function () {
     enigmaMachine.setReflector($(this).val());
+  });
+
+  $('#plugboard-input').change(function () {
+    var input = $(this).val();
+    var validInput = enigma.util.validatePlugboardInput(input);
+    $('#plugboard-input-form-group').toggleClass('has-error', !validInput);
+    if (validInput) {
+      enigmaMachine.setPlugboard(input);
+      var connections = enigmaMachine.getState().plugboard.connections;
+      var html = _.map(connections, function (connection) {
+        return connection.slice(0, 1) + '-' + connection.slice(1, 2);
+      }).join(', ');
+      $('#plugboard').html(html);
+    }
   });
 
   function getSelector(prefix) {

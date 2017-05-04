@@ -11,6 +11,7 @@
   <script src="lib/util.js"></script>
   <script src="lib/rotor.js"></script>
   <script src="lib/reflector.js"></script>
+  <script src="lib/plugboard.js"></script>
   <script src="lib/machine.js"></script>
   <script src="main.js"></script>
 </head>
@@ -42,8 +43,19 @@
       <div class="col-md-1"><select id="ground-setting-rotor-no-2" class="form-control"></select></div>
       <div class="col-md-1"><select id="ground-setting-rotor-no-3" class="form-control"></select></div>
     </div>
+    <div class="row options-row">
+      <div class="col-md-4"><p class="options-row-label">Plugboard</p></div>
+      <div class="col-md-2">
+        <div id="plugboard-input-form-group" class="form-group">
+          <input id="plugboard-input" class="form-control" placeholder="e.g. DY, XC"></input>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <p id="plugboard" class="options-row-label"></p>
+      </div>
+    </div>
     <div class="row" style="margin-bottom: 20px;">
-      <div class="col-md-4"><textarea class="form-control message" placeholder="Enter a message and click &quot;Run&quot;"></textarea></div>
+      <div class="col-md-4"><textarea class="form-control message" placeholder="Enter text and click &quot;Run&quot;"></textarea></div>
       <div class="col-md-4"><button class="btn btn-default run" type="submit">Run</button></div>
     </div>
     <div class="row">
