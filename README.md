@@ -1,5 +1,5 @@
 # enigma-machine
-An Enigma machine simulator written in Javascript.
+An [Enigma machine](http://www.bbc.co.uk/history/topics/enigma) simulator written in Javascript.
 
 Try it at https://ewen.github.io/enigma-machine/
 
